@@ -18,6 +18,23 @@
   "styles": [
     "styles/spotlight-manager.css"
   ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "ru",
+      "name": "Russian",
+      "path": "lang/ru.json"
+    }
+  ],
+  "flags": {
+    "hotReload": {
+      "extensions": ["json", "css"]
+    }
+  },
   "version": "0.0.5",
   "download": "https://github.com/Alex-M-B95/fvtt-spotlight-manager/archive/refs/tags/0.0.5.zip",
   "url": "https://github.com/Alex-M-B95/fvtt-spotlight-manager",

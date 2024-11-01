@@ -8,9 +8,9 @@ export class SessionSpotlightWindow extends Application {
     }
     
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             id: "session-spotlight-window",
-            title: "Session Spotlight",
+            title: game.i18n.localize('alexs-spotlight-manager.session-spotlight'),
             template: `modules/${Constants.moduleName}/templates/windows/session-spotlight.html`,
             width: 'auto',
             height: 'auto',
@@ -19,11 +19,8 @@ export class SessionSpotlightWindow extends Application {
     }
 
     getData() {
-        const ids = Session.players
-
-        const players = game.users.contents
-            .filter(user => !user.isGM)
-            .filter(user => ids.includes(user.id))
+        const players = game.users
+            .filter(user => user.flags[Constants.moduleName].isEnabled)
             .map(user => {
                 return {
                     id: user.id,
@@ -35,7 +32,14 @@ export class SessionSpotlightWindow extends Application {
                 };
             });
 
-        return { players };
+        // TOOD: Implement new way to count time (for statistic feature)
+        return {
+//            statistic: {
+//                average: "00:15",
+//                maxinum: "00:48"
+//            },
+            players: players
+        };
     }
 
     activateListeners(html) {

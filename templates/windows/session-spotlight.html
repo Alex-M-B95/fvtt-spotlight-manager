@@ -1,5 +1,9 @@
 <div id="players-list">
-  <button type="button" class="top-button" id="finish-session-button">Finish session</button>
+  <button type="button" class="top-button" id="finish-session-button">{{localize 'alexs-spotlight-manager.finish-session'}}</button>
+  <!--<div style="align-content: center">-->
+  <!--  <div>AVG: {{statistic.average}}</div>-->
+  <!--  <div>MAX: {{statistic.maxinum}}</div>-->
+  <!--</div>-->
   {{#each players}}
   <div class="player player-toggle {{active}}" data-player-id="{{id}}">
     <div class="player-info">

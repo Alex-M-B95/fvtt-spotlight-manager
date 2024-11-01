@@ -97,6 +97,8 @@ export class Session {
     }
     
     static #onChange(data) {
+        if (!game.user.isGM) { return }
+
         log('session settings did change')
         this.#updateGameUsers(data)
         Hooks.call(Constants.updateTriggerHookName)

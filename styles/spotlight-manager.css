@@ -16,6 +16,10 @@
   opacity: 0.44;
 }
 
+.player-toggle * {
+  pointer-events: none;
+}
+
 .top-button {
   margin-bottom: 20px;
 }
